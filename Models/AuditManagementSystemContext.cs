@@ -59,6 +59,13 @@ namespace AuditSeverityAPI.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Userid).HasColumnName("Userid");
+
+                entity.HasOne(d => d.Userdetail)
+                    .WithMany(p => p.Audits)
+                    .HasForeignKey(d => d.Userid)
+                    .HasConstraintName("FK__Audit__userid__47DBAE45");
+
                 entity.Property(e => e.RemedialActionDuration).IsUnicode(false);
             });
 

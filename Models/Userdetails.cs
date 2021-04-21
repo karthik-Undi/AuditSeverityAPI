@@ -9,8 +9,15 @@ namespace AuditSeverityAPI.Models
 {
     public partial class Userdetails
     {
+
+        public Userdetails()
+        {
+            Audits = new HashSet<Audit>();
+        }
         public int Userid { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+
+        public virtual ICollection<Audit> Audits { get; set; } 
     }
 }

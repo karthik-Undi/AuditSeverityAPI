@@ -16,5 +16,6 @@ namespace AuditSeverityAPI.Models.ViewModels
         public DateTime? AuditDate { get; set; }
         public string ProjectExecutionStatus { get; set; }
         public string RemedialActionDuration { get; set; }
+        public int Userid { get; set; }
     }
 }

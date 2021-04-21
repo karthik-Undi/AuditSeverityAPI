@@ -39,7 +39,8 @@ namespace AuditSeverityAPI.Repositories
                     AuditType = item.AuditType,
                     AuditDate = DateTime.Now,
                     ProjectExecutionStatus = item.ProjectExecutionStatus,
-                    RemedialActionDuration = item.RemedialActionDuration
+                    RemedialActionDuration = item.RemedialActionDuration,
+                    Userid = item.Userid
                 };
                 await _context.Audit.AddAsync(audit);
                 await _context.SaveChangesAsync();
